@@ -3,9 +3,9 @@ import java.util.Map;
 
 public class Dictionary {
 
-	Map<Integer, Card> map = new HashMap<Integer, Card>();
+	Map<Integer, CardInfo> map = new HashMap<Integer, CardInfo>();
 
-	Card getCard(Integer number) {
+	CardInfo getCard(Integer number) {
 		return map.get(number);
 	}
 
@@ -13,44 +13,44 @@ public class Dictionary {
 
 		int index = 1;
 
-		map.put(index++, new Card("Anthropos"));
-		map.put(index++, new Card("Demiurge"));
-		map.put(index++, new Card("Astaroth"));
-		map.put(index++, new Card("Kether"));
-		map.put(index++, new Card("Chokmah"));
-		map.put(index++, new Card("Binah"));
-		map.put(index++, new Card("Chesed"));
-		map.put(index++, new Card("Geburah"));
-		map.put(index++, new Card("Tiphareth"));
-		map.put(index++, new Card("Netzach"));
-		map.put(index++, new Card("Hod"));
-		map.put(index++, new Card("Yesod"));
-		map.put(index++, new Card("Malkuth"));
-		map.put(index++, new Card("Thaumiel"));
-		map.put(index++, new Card("Chagidiel"));
-		map.put(index++, new Card("Sathariel"));
-		map.put(index++, new Card("Gamichicoth"));
-		map.put(index++, new Card("Golab"));
-		map.put(index++, new Card("Togarini"));
-		map.put(index++, new Card("Hareb-Serap"));
-		map.put(index++, new Card("Samael"));
-		map.put(index++, new Card("Gamaliel"));
-		map.put(index++, new Card("Nahemoth"));
+		map.put(index++, new CardInfo("Anthropos"));
+		map.put(index++, new CardInfo("Demiurge"));
+		map.put(index++, new CardInfo("Astaroth"));
+		map.put(index++, new CardInfo("Kether"));
+		map.put(index++, new CardInfo("Chokmah"));
+		map.put(index++, new CardInfo("Binah"));
+		map.put(index++, new CardInfo("Chesed"));
+		map.put(index++, new CardInfo("Geburah"));
+		map.put(index++, new CardInfo("Tiphareth"));
+		map.put(index++, new CardInfo("Netzach"));
+		map.put(index++, new CardInfo("Hod"));
+		map.put(index++, new CardInfo("Yesod"));
+		map.put(index++, new CardInfo("Malkuth"));
+		map.put(index++, new CardInfo("Thaumiel"));
+		map.put(index++, new CardInfo("Chagidiel"));
+		map.put(index++, new CardInfo("Sathariel"));
+		map.put(index++, new CardInfo("Gamichicoth"));
+		map.put(index++, new CardInfo("Golab"));
+		map.put(index++, new CardInfo("Togarini"));
+		map.put(index++, new CardInfo("Hareb-Serap"));
+		map.put(index++, new CardInfo("Samael"));
+		map.put(index++, new CardInfo("Gamaliel"));
+		map.put(index++, new CardInfo("Nahemoth"));
 
 		for (int number = 1; number < 10; number++) {
-			map.put(index++, new Card("Skull", number));
+			map.put(index++, new CardInfo("Skull", number));
 		}
 		for (int number = 1; number < 10; number++) {
-			map.put(index++, new Card("Rose", number));
+			map.put(index++, new CardInfo("Rose", number));
 		}
 		for (int number = 1; number < 10; number++) {
-			map.put(index++, new Card("Hourglass", number));
+			map.put(index++, new CardInfo("Hourglass", number));
 		}
 		for (int number = 1; number < 10; number++) {
-			map.put(index++, new Card("Crescent", number));
+			map.put(index++, new CardInfo("Crescent", number));
 		}
 		for (int number = 1; number < 10; number++) {
-			map.put(index++, new Card("Eye", number));
+			map.put(index++, new CardInfo("Eye", number));
 		}
 
 	}

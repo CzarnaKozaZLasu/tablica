@@ -13,7 +13,7 @@ public class CardService {
 	public CardService() {
 	}
 
-	public void setIconAndText(CardLabel card, Card cardInfo) {
+	public void setIconAndText(CardLabel card, CardInfo cardInfo) {
 
 		String name = cardInfo.name;
 		int number = cardInfo.number;

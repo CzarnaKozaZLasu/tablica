@@ -1,15 +1,15 @@
-class Card {
+class CardInfo {
 
 	String name;
 	int number;
 
-	Card(String name, int number) {
+	CardInfo(String name, int number) {
 		this.name = name;
 		this.number = number;
 
 	}
 
-	Card(String name) {
+	CardInfo(String name) {
 		this(name, 0);
 	}
 }

@@ -6,7 +6,7 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class CardLabel extends JLabel {
+public abstract class CardLabel extends JLabel {
 
 	private boolean hidden = true;
 	private Icon icon;
@@ -42,7 +42,7 @@ public class CardLabel extends JLabel {
 			return;
 		}
 
-		ImageIcon imageIcon = new ImageIcon("./resource/back.png");
+		ImageIcon imageIcon = new ImageIcon(getPathToImage());
 		Image image = imageIcon.getImage();
 		Image newimg = image.getScaledInstance(this.getWidth(), this.getHeight(), java.awt.Image.SCALE_SMOOTH);
 
@@ -66,4 +66,5 @@ public class CardLabel extends JLabel {
 		return this.description;
 	}
 
+	abstract String getPathToImage();
 }
