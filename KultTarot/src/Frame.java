@@ -68,31 +68,31 @@ public class Frame extends JFrame {
 
 		Dictionary dictionary = new Dictionary();
 
-		JLabel cardOne = new JLabel("");
+		CardLabel cardOne = new CardLabel("");
 		cardOne.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cardOne.setForeground(new Color(211, 211, 211));
 		cardOne.setBounds(21, 22, 163, 273);
 		contentPane.add(cardOne);
 
-		JLabel cardTwo = new JLabel("");
+		CardLabel cardTwo = new CardLabel("");
 		cardTwo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cardTwo.setForeground(new Color(211, 211, 211));
 		cardTwo.setBounds(222, 22, 163, 273);
 		contentPane.add(cardTwo);
 
-		JLabel cardThree = new JLabel("");
+		CardLabel cardThree = new CardLabel("");
 		cardThree.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cardThree.setForeground(new Color(211, 211, 211));
 		cardThree.setBounds(427, 22, 163, 273);
 		contentPane.add(cardThree);
 
-		JLabel cardFour = new JLabel("");
+		CardLabel cardFour = new CardLabel("");
 		cardFour.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cardFour.setForeground(new Color(211, 211, 211));
 		cardFour.setBounds(21, 334, 163, 273);
 		contentPane.add(cardFour);
 
-		JLabel cardFive = new JLabel("");
+		CardLabel cardFive = new CardLabel("");
 		cardFive.setFont(new Font("Tahoma", Font.BOLD, 12));
 		cardFive.setForeground(new Color(211, 211, 211));
 		cardFive.setBounds(222, 334, 163, 273);
@@ -133,6 +133,11 @@ public class Frame extends JFrame {
 
 		generateButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				cardOne.hideCard();
+				cardTwo.hideCard();
+				cardThree.hideCard();
+				cardFour.hideCard();
+				cardFive.hideCard();
 				List<Integer> list = generateNumbers();
 				cardService.setIconAndText(cardOne, dictionary.getCard(list.get(0)));
 				cardService.setIconAndText(cardTwo, dictionary.getCard(list.get(1)));

@@ -39,7 +39,7 @@ public class CardService {
 		}
 
 		tooltipText += "</html>";
-		
+
 		tooltipText = editText(tooltipText, "Postacie:");
 		tooltipText = editText(tooltipText, "Miejsca:");
 		tooltipText = editText(tooltipText, "Organizacje:");
