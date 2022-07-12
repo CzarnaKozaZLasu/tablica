@@ -107,13 +107,13 @@ public class Frame extends JFrame {
 		infoLabel.setForeground(new Color(0, 0, 0));
 
 		CardLabel cardAdditionalOne = new SmallCardLabel("");
-		cardAdditionalOne.setBounds(427, 470, 83, 137);
+		cardAdditionalOne.setBounds(427, 480, 83, 127);
 		
 		CardLabel cardAdditionalTwo = new SmallCardLabel("");
-		cardAdditionalTwo.setBounds(427, 323, 83, 137);
+		cardAdditionalTwo.setBounds(427, 343, 83, 127);
 
 		CardLabel cardAdditionalThree = new SmallCardLabel("");
-		cardAdditionalThree.setBounds(520, 323, 83, 137);
+		cardAdditionalThree.setBounds(520, 343, 83, 127);
 		
 		addAdapter(cardOne, infoLabel);
 		addAdapter(cardTwo, infoLabel);
@@ -129,7 +129,7 @@ public class Frame extends JFrame {
 
 		ImageIcon imageIcon = new ImageIcon("./resource/deck.png");
 		Image image = imageIcon.getImage();
-		generateButton.setBounds(520, 470, 99, 137);
+		generateButton.setBounds(520, 480, 94, 127);
 		Image newimg = image.getScaledInstance(generateButton.getWidth(), generateButton.getHeight(),
 				java.awt.Image.SCALE_SMOOTH);
 
