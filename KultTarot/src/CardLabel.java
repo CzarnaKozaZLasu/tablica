@@ -8,9 +8,10 @@ import javax.swing.JLabel;
 
 public class CardLabel extends JLabel {
 
-	boolean hidden = true;
-	Icon icon;
-	String text;
+	private boolean hidden = true;
+	private Icon icon;
+	private String text;
+	private String description;
 
 	public CardLabel(String text) {
 		super(text, null, LEADING);
@@ -55,6 +56,14 @@ public class CardLabel extends JLabel {
 			super.setText(text);
 		else
 			super.setText("");
+	}
+
+	public void setDescriptiont(String description) {
+		this.description = description;
+	}
+
+	public String getDescription() {
+		return this.description;
 	}
 
 }

@@ -7,25 +7,18 @@ import javax.swing.border.Border;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
-import java.awt.GridBagLayout;
 import java.awt.Image;
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
-import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 
 public class Frame extends JFrame {
@@ -153,10 +146,10 @@ public class Frame extends JFrame {
 
 	}
 
-	void addAdapter(JLabel card, JLabel infoLabel) {
+	void addAdapter(CardLabel card, JLabel infoLabel) {
 		card.addMouseListener(new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
-				infoLabel.setText(card.getToolTipText());
+				infoLabel.setText(card.getDescription());
 			}
 		});
 	}
