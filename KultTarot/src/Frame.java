@@ -114,9 +114,10 @@ public class Frame extends JFrame {
 
 		JButton generateButton = new JButton("");
 
-		ImageIcon imageIcon = new ImageIcon("./resource/back.png");
+
+		ImageIcon imageIcon = new ImageIcon("./resource/deck.png");
 		Image image = imageIcon.getImage();
-		generateButton.setBounds(427, 334, 162, 273);
+		generateButton.setBounds(427, 334, 195, 273);
 		Image newimg = image.getScaledInstance(generateButton.getWidth(), generateButton.getHeight(),
 				java.awt.Image.SCALE_SMOOTH);
 
@@ -124,8 +125,9 @@ public class Frame extends JFrame {
 
 		generateButton.setIcon(newImageIcon);
 
-		generateButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+		generateButton.addMouseListener(new MouseAdapter() {
+
+			public void mouseClicked(MouseEvent e) {
 				cardOne.hideCard();
 				cardTwo.hideCard();
 				cardThree.hideCard();
