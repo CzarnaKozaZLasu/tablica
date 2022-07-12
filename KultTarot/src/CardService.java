@@ -13,7 +13,7 @@ public class CardService {
 	public CardService() {
 	}
 
-	public void setIconAndText(JLabel card, Card cardInfo) {
+	public void setIconAndText(CardLabel card, Card cardInfo) {
 
 		String name = cardInfo.name;
 		int number = cardInfo.number;
@@ -23,31 +23,31 @@ public class CardService {
 		if (number != 0)
 			text = number + "";
 
-		String tooltipText = "<html>";
+		String description = "<html>";
 		Scanner scanner;
 		try {
 			scanner = new Scanner(new File("./resource/" + name + text + ".txt"), "utf-8");
 			cardText += scanner.nextLine();
-			tooltipText += cardText + "<br>";
+			description += cardText + "<br>";
 
 			while (scanner.hasNextLine()) {
-				tooltipText += scanner.nextLine() + "<br>";
+				description += scanner.nextLine() + "<br>";
 			}
 			scanner.close();
 		} catch (FileNotFoundException e1) {
 			e1.printStackTrace();
 		}
 
-		tooltipText += "</html>";
-		
-		tooltipText = editText(tooltipText, "Postacie:");
-		tooltipText = editText(tooltipText, "Miejsca:");
-		tooltipText = editText(tooltipText, "Organizacje:");
-		tooltipText = editText(tooltipText, "Zdarzenia:");
-		tooltipText = editText(tooltipText, "Stworzenia:");
-		tooltipText = editText(tooltipText, "Przedmioty:");
+		description += "</html>";
 
-		card.setToolTipText(tooltipText);
+		description = editText(description, "Postacie:");
+		description = editText(description, "Miejsca:");
+		description = editText(description, "Organizacje:");
+		description = editText(description, "Zdarzenia:");
+		description = editText(description, "Stworzenia:");
+		description = editText(description, "Przedmioty:");
+
+		card.setDescriptiont(description);
 
 		ImageIcon imageIcon = new ImageIcon("./resource/" + name + ".png");
 		Image image = imageIcon.getImage();
