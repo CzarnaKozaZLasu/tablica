@@ -108,13 +108,13 @@ public class Frame extends JFrame {
 
 		CardLabel cardAdditionalOne = new SmallCardLabel("");
 		cardAdditionalOne.setBounds(427, 480, 83, 127);
-		
+
 		CardLabel cardAdditionalTwo = new SmallCardLabel("");
 		cardAdditionalTwo.setBounds(427, 343, 83, 127);
 
 		CardLabel cardAdditionalThree = new SmallCardLabel("");
 		cardAdditionalThree.setBounds(520, 343, 83, 127);
-		
+
 		addAdapter(cardOne, infoLabel);
 		addAdapter(cardTwo, infoLabel);
 		addAdapter(cardThree, infoLabel);
@@ -126,7 +126,6 @@ public class Frame extends JFrame {
 
 		JButton generateButton = new JButton("");
 
-
 		ImageIcon imageIcon = new ImageIcon("./resource/deck.png");
 		Image image = imageIcon.getImage();
 		generateButton.setBounds(520, 480, 94, 127);
@@ -136,9 +135,7 @@ public class Frame extends JFrame {
 		ImageIcon newImageIcon = new ImageIcon(newimg);
 
 		generateButton.setIcon(newImageIcon);
-		
 
-	
 		generateButton.addMouseListener(new MouseAdapter() {
 
 			public void mouseClicked(MouseEvent e) {
@@ -165,12 +162,11 @@ public class Frame extends JFrame {
 		});
 
 		contentPane.add(generateButton);
-		
 
 		contentPane.add(cardAdditionalOne);
-	
+
 		contentPane.add(cardAdditionalTwo);
-		
+
 		contentPane.add(cardAdditionalThree);
 
 	}

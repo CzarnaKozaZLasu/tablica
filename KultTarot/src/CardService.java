@@ -54,8 +54,9 @@ public class CardService {
 		Image newimg = image.getScaledInstance(card.getWidth(), card.getHeight(), java.awt.Image.SCALE_SMOOTH);
 
 		if (number != 0)
-			card.setText("<html> <center> <p style=\"font-size:30px\">" + cardText.substring(0, 1) + " </p>"
-					+ cardText.substring(2) + "<br> <br> <br> <br> <br> </center> </html>");
+			card.setText("<html> <center> <p style=\"font-size:30px; color: white\">" + cardText.substring(0, 1)
+					+ " </p>" + "<p style=\"color:white\">" + cardText.substring(2) + "</p>"
+					+ "<br> <br> <br> <br> <br> </center> </html>");
 		else
 			card.setText("");
 
