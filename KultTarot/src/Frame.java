@@ -181,7 +181,7 @@ public class Frame extends JFrame {
 
 	List<Integer> generateNumbers() {
 
-		int max = 68;
+		int max = 69;
 		int min = 1;
 
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
