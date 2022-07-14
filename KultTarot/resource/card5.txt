@@ -1,0 +1,6 @@
+POSTAĆ: Największa siła postaci.
+LOKACJA: Element, który czyni lokację wyjątkową.
+KULT: Niespodziewany zasób Kultu.
+WĄTKI: Potęga wspierająca wątki.
+STWORZENIE: Siła stworzenia.
+ARTEFAKT: Jaka jest jego poboczna moc.

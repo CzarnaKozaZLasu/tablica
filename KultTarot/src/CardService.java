@@ -10,7 +10,10 @@ import javax.swing.JPanel;
 
 public class CardService {
 
-	public CardService() {
+	private final ReadFileService readFileService;
+
+	public CardService(ReadFileService readFileService) {
+		this.readFileService = readFileService;
 	}
 
 	public void setIconAndText(CardLabel card, CardInfo cardInfo) {
@@ -18,28 +21,12 @@ public class CardService {
 		String name = cardInfo.name;
 		int number = cardInfo.number;
 		String text = "";
-		String cardText = "";
 
 		if (number != 0)
 			text = number + "";
 
-		String description = "<html>";
-		Scanner scanner;
-		try {
-			scanner = new Scanner(new File("./resource/" + name + text + ".txt"), "utf-8");
-			cardText += scanner.nextLine();
-			description += cardText + "<br>";
-
-			while (scanner.hasNextLine()) {
-				description += scanner.nextLine() + "<br>";
-			}
-			scanner.close();
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-
-		description += "</html>";
-
+		String cardText = this.readFileService.getFirstLine(name + text);
+		String description = this.readFileService.getHtmlText(name + text);
 		description = editText(description, "Postacie:");
 		description = editText(description, "Miejsca:");
 		description = editText(description, "Organizacje:");

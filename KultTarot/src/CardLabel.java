@@ -12,6 +12,7 @@ public abstract class CardLabel extends JLabel {
 	private Icon icon;
 	private String text;
 	private String description;
+	private String tooltipText;
 
 	public CardLabel(String text) {
 		super(text, null, LEADING);
@@ -27,12 +28,24 @@ public abstract class CardLabel extends JLabel {
 		this.hidden = true;
 		this.setIcon(icon);
 		this.setText(text);
+		this.setToolTipText(tooltipText);
 	}
 
 	void showCard() {
 		this.hidden = false;
 		this.setIcon(icon);
 		this.setText(text);
+		this.setToolTipText(tooltipText);
+	}
+
+	public void setToolTipText(String text) {
+		this.tooltipText = text;
+		if (!hidden) {
+			super.setToolTipText(text);
+			return;
+		}
+
+		super.setToolTipText("");
 	}
 
 	public void setIcon(Icon icon) {
