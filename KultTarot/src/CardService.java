@@ -10,36 +10,23 @@ import javax.swing.JPanel;
 
 public class CardService {
 
-	public CardService() {
+	private final ReadFileService readFileService;
+
+	public CardService(ReadFileService readFileService) {
+		this.readFileService = readFileService;
 	}
 
-	public void setIconAndText(CardLabel card, Card cardInfo) {
+	public void setIconAndText(CardLabel card, CardInfo cardInfo) {
 
 		String name = cardInfo.name;
 		int number = cardInfo.number;
 		String text = "";
-		String cardText = "";
 
 		if (number != 0)
 			text = number + "";
 
-		String description = "<html>";
-		Scanner scanner;
-		try {
-			scanner = new Scanner(new File("./resource/" + name + text + ".txt"), "utf-8");
-			cardText += scanner.nextLine();
-			description += cardText + "<br>";
-
-			while (scanner.hasNextLine()) {
-				description += scanner.nextLine() + "<br>";
-			}
-			scanner.close();
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		}
-
-		description += "</html>";
-
+		String cardText = this.readFileService.getFirstLine(name + text);
+		String description = this.readFileService.getHtmlText(name + text);
 		description = editText(description, "Postacie:");
 		description = editText(description, "Miejsca:");
 		description = editText(description, "Organizacje:");
@@ -54,8 +41,9 @@ public class CardService {
 		Image newimg = image.getScaledInstance(card.getWidth(), card.getHeight(), java.awt.Image.SCALE_SMOOTH);
 
 		if (number != 0)
-			card.setText("<html> <center> <p style=\"font-size:30px\">" + cardText.substring(0, 1) + " </p>"
-					+ cardText.substring(2) + "<br> <br> <br> <br> <br> </center> </html>");
+			card.setText("<html> <center> <p style=\"font-size:30px; color: white\">" + cardText.substring(0, 1)
+					+ " </p>" + "<p style=\"color:white\">" + cardText.substring(2) + "</p>"
+					+ "<br> <br> <br> <br> <br> </center> </html>");
 		else
 			card.setText("");
 
@@ -68,7 +56,7 @@ public class CardService {
 	}
 
 	private String editText(String text, String word) {
-		return text.replaceFirst(word, "<b><span style=\"color: #ef6602\">" + word + "</span></b>");
+		return text.replaceFirst(word, "<b><span style=\"color: #b30000\">" + word + "</span></b>");
 	}
 
 }

@@ -1,0 +1,6 @@
+POSTAĆ: Kluczowa cecha postaci.
+LOKACJA: Rodzaj lokacji.
+KULT: Jaka Potęga/Ambicja kieruje kultem.
+WĄTKI: Potęga stojąca za wątkami.
+STWORZENIE: Pochodzenie stworzenia.
+ARTEFAKT: Pochodzenie artefaktu.

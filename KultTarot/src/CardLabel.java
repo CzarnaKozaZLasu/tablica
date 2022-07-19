@@ -6,12 +6,13 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public class CardLabel extends JLabel {
+public abstract class CardLabel extends JLabel {
 
 	private boolean hidden = true;
 	private Icon icon;
 	private String text;
 	private String description;
+	private String tooltipText;
 
 	public CardLabel(String text) {
 		super(text, null, LEADING);
@@ -27,12 +28,24 @@ public class CardLabel extends JLabel {
 		this.hidden = true;
 		this.setIcon(icon);
 		this.setText(text);
+		this.setToolTipText(tooltipText);
 	}
 
 	void showCard() {
 		this.hidden = false;
 		this.setIcon(icon);
 		this.setText(text);
+		this.setToolTipText(tooltipText);
+	}
+
+	public void setToolTipText(String text) {
+		this.tooltipText = text;
+		if (!hidden) {
+			super.setToolTipText(text);
+			return;
+		}
+
+		super.setToolTipText("");
 	}
 
 	public void setIcon(Icon icon) {
@@ -42,7 +55,7 @@ public class CardLabel extends JLabel {
 			return;
 		}
 
-		ImageIcon imageIcon = new ImageIcon("./resource/back.png");
+		ImageIcon imageIcon = new ImageIcon(getPathToImage());
 		Image image = imageIcon.getImage();
 		Image newimg = image.getScaledInstance(this.getWidth(), this.getHeight(), java.awt.Image.SCALE_SMOOTH);
 
@@ -66,4 +79,5 @@ public class CardLabel extends JLabel {
 		return this.description;
 	}
 
+	abstract String getPathToImage();
 }

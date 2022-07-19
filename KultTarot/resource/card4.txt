@@ -1,0 +1,6 @@
+POSTAĆ: Największa słabość postaci.
+LOKACJA: Słabość lokacji, która może zostać wykorzystana.
+KULT: Słabość kultu, na przykład jego wrogowie.
+WĄTKI: Potęga przeszkadzająca w wątkach.
+STWORZENIE: Słabość stworzenia.
+ARTEFAKT: Jaka jest jego główna moc.

@@ -1,0 +1,6 @@
+POSTAĆ: Ambicja, która kieruje postacią.
+LOKACJA: Niespodziewana lub dziwaczna cecha.
+KULT: Co kult usiłuje osiągnąć.
+WĄTKI: Następny Ruch w wątkach.
+STWORZENIE: Cele stworzenia.
+ARTEFAKT: Jakie zagrożenie niesie używanie go.

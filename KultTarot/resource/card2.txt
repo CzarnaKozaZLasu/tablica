@@ -1,0 +1,6 @@
+POSTAĆ: Element przeszłości, który ukształtował postać.
+LOKACJA: Coś o przeszłości lokacji.
+KULT: Istotny element historii kultu.
+WĄTKI: Przyczyna wątków.
+STWORZENIE: Gdzie można znaleźć informacje o stworzeniu.
+ARTEFAKT: Kto jeszcze go poszukuje.
