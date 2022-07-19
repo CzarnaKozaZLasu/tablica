@@ -36,6 +36,7 @@ public class Frame extends JFrame {
 		UIManager.put("ToolTip.background", new ColorUIResource(238, 238, 238));
 		ToolTipManager.sharedInstance().setDismissDelay(1000 * 10);
 		ToolTipManager.sharedInstance().setInitialDelay(500);
+		UIManager.put("ToolTip.font", new Font("Arial", Font.PLAIN , 14));
 
 		ReadFileService readFileService = new ReadFileService();
 		CardService cardServie = new CardService(readFileService);
@@ -217,6 +218,6 @@ public class Frame extends JFrame {
 	}
 
 	private String editText(String text, String word) {
-		return text.replaceFirst(word, "<b><span style=\"color: #ef6602\">" + word + "</span></b>");
+		return text.replaceFirst(word, "<b><span style=\"color: #b30000\">" + word + "</span></b>");
 	}
 }

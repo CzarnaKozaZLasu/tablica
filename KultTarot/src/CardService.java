@@ -56,7 +56,7 @@ public class CardService {
 	}
 
 	private String editText(String text, String word) {
-		return text.replaceFirst(word, "<b><span style=\"color: #ef6602\">" + word + "</span></b>");
+		return text.replaceFirst(word, "<b><span style=\"color: #b30000\">" + word + "</span></b>");
 	}
 
 }
