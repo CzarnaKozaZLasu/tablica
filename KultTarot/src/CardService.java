@@ -16,7 +16,7 @@ public class CardService {
 		this.readFileService = readFileService;
 	}
 
-	public void setIconAndText(CardLabel card, CardInfo cardInfo) {
+	public void setIconAndText(CardLabel card, CardInfo cardInfo, boolean showNames) {
 
 		String name = cardInfo.name;
 		int number = cardInfo.number;
@@ -40,11 +40,16 @@ public class CardService {
 		Image image = imageIcon.getImage();
 		Image newimg = image.getScaledInstance(card.getWidth(), card.getHeight(), java.awt.Image.SCALE_SMOOTH);
 
-		if (number != 0)
-			card.setText("<html> <center> <p style=\"font-size:30px; color: white\">" + cardText.substring(0, 1)
-					+ " </p>" + "<p style=\"color:white\">" + cardText.substring(2) + "</p>"
-					+ "<br> <br> <br> <br> <br> </center> </html>");
-		else
+		if (number != 0) {
+			if (showNames)
+				card.setText("<html> <center> <p style=\"font-size:30px; color: white\">" + cardText.substring(0, 1)
+						+ " </p>" + "<p style=\"color:white\">" + cardText.substring(2) + "</p>"
+						+ "<br> <br> <br> <br> <br> </center> </html>");
+			else {
+				card.setText("<html> <center> <br> <br> <p style=\"font-size:40px; color: white\">"
+						+ cardText.substring(0, 1) + "<br> <br> </center> </html>");
+			}
+		} else
 			card.setText("");
 
 		card.setHorizontalTextPosition(JLabel.CENTER);

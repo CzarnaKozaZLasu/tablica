@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JScrollPane;
 import javax.swing.ToolTipManager;
 import javax.swing.UIManager;
+import javax.swing.JCheckBox;
 
 public class Frame extends JFrame {
 
@@ -36,7 +37,7 @@ public class Frame extends JFrame {
 		UIManager.put("ToolTip.background", new ColorUIResource(238, 238, 238));
 		ToolTipManager.sharedInstance().setDismissDelay(1000 * 10);
 		ToolTipManager.sharedInstance().setInitialDelay(500);
-		UIManager.put("ToolTip.font", new Font("Arial", Font.PLAIN , 14));
+		UIManager.put("ToolTip.font", new Font("Arial", Font.PLAIN, 14));
 
 		ReadFileService readFileService = new ReadFileService();
 		CardService cardServie = new CardService(readFileService);
@@ -61,7 +62,7 @@ public class Frame extends JFrame {
 	public Frame(CardService cardService, ReadFileService readFileService) {
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1009, 663);
+		setBounds(100, 100, 1008, 678);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.BLACK);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -129,6 +130,11 @@ public class Frame extends JFrame {
 		CardLabel cardAdditionalThree = new SmallCardLabel("");
 		cardAdditionalThree.setBounds(520, 343, 83, 127);
 
+		JCheckBox showNamesCheckbox = new JCheckBox("Poka\u017C nazwy");
+		showNamesCheckbox.setForeground(Color.WHITE);
+		showNamesCheckbox.setBackground(Color.BLACK);
+		showNamesCheckbox.setBounds(886, 614, 99, 21);
+
 		addAdapter(cardOne, infoLabel);
 		addAdapter(cardTwo, infoLabel);
 		addAdapter(cardThree, infoLabel);
@@ -162,14 +168,15 @@ public class Frame extends JFrame {
 				cardAdditionalTwo.hideCard();
 				cardAdditionalThree.hideCard();
 				List<Integer> list = generateNumbers();
-				cardService.setIconAndText(cardOne, dictionary.getCard(list.get(0)));
-				cardService.setIconAndText(cardTwo, dictionary.getCard(list.get(1)));
-				cardService.setIconAndText(cardThree, dictionary.getCard(list.get(2)));
-				cardService.setIconAndText(cardFour, dictionary.getCard(list.get(3)));
-				cardService.setIconAndText(cardFive, dictionary.getCard(list.get(4)));
-				cardService.setIconAndText(cardAdditionalOne, dictionary.getCard(list.get(5)));
-				cardService.setIconAndText(cardAdditionalTwo, dictionary.getCard(list.get(6)));
-				cardService.setIconAndText(cardAdditionalThree, dictionary.getCard(list.get(7)));
+				boolean isSelected = showNamesCheckbox.isSelected();
+				cardService.setIconAndText(cardOne, dictionary.getCard(list.get(0)), isSelected);
+				cardService.setIconAndText(cardTwo, dictionary.getCard(list.get(1)), isSelected);
+				cardService.setIconAndText(cardThree, dictionary.getCard(list.get(2)), isSelected);
+				cardService.setIconAndText(cardFour, dictionary.getCard(list.get(3)), isSelected);
+				cardService.setIconAndText(cardFive, dictionary.getCard(list.get(4)), isSelected);
+				cardService.setIconAndText(cardAdditionalOne, dictionary.getCard(list.get(5)), isSelected);
+				cardService.setIconAndText(cardAdditionalTwo, dictionary.getCard(list.get(6)), isSelected);
+				cardService.setIconAndText(cardAdditionalThree, dictionary.getCard(list.get(7)), isSelected);
 				infoLabel.setText("");
 
 			}
@@ -182,6 +189,8 @@ public class Frame extends JFrame {
 		contentPane.add(cardAdditionalTwo);
 
 		contentPane.add(cardAdditionalThree);
+
+		contentPane.add(showNamesCheckbox);
 
 	}
 
